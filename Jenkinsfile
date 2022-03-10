@@ -67,20 +67,27 @@ pipeline {
                 echo "PATH = ${PATH}"
             }
         }
-        stage("build") {
+        stage("clean") {
             steps {
-                 echo 'In side build !!'
-                 sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
+                 echo 'In side clean !!'
+                 sh 'mvn clean' 
             }
         }
         stage("test") {
             steps {
-                echo 'In side test'
+                 echo 'In side test !!'
+                 sh 'mvn test' 
+            }
+        }
+        stage("build") {
+            steps {
+                echo 'In side build !!'
+                sh 'mvn install' 
             }
         }
         stage("deploy") {
             steps {
-                 echo 'In side deploy'
+                 echo 'In side deploy !!'
             }
         }
     }   

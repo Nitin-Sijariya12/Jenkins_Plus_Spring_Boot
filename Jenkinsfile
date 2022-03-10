@@ -5,6 +5,7 @@ pipeline {
         stage("init") {
             steps {
                 echo 'In side init !!'
+                echo "Branch name = ${BRANCH_NAME}"
             }
         }
         stage("build") {

@@ -9,7 +9,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                 echo 'In side build'
+                 echo 'In side build !!'
             }
         }
         stage("test") {

@@ -1,11 +1,15 @@
 pipeline {
     agent any
     
+    enviroment{
+        Name = 'Nitin'   
+    }
+    
     stages {
         stage("init") {
             steps {
                 echo 'In side init !!'
-                echo "Branch name = ${BRANCH_NAME}"
+                echo "Name = ${Name}"
             }
         }
         stage("build") {

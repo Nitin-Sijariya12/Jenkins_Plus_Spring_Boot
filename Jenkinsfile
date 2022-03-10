@@ -6,12 +6,19 @@ pipeline {
         CITY    = 'Datia'
     }
     
+    tools {         
+        maven 'Maven 3.3.9'  
+        jdk 'jdk8'      
+    }
+    
     stages {
         stage("init") {
             steps {
                 echo 'In side init !!'
                 echo "Name =  ${NAME}"
                 echo "City =  ${CITY}"
+                echo "PATH = ${PATH}"
+                echo "M2_HOME = ${M2_HOME}"
             }
         }
         stage("build") {

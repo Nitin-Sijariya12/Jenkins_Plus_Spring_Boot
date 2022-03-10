@@ -16,7 +16,7 @@ pipeline {
         stage("init") {
             steps {
                 echo 'In side init !!'
-                echo "BRANCH_NAME :: $BRANCH_NAME"
+                 
                  echo "BRANCH_IS_PRIMARY :: $BRANCH_IS_PRIMARY"
                  echo "CHANGE_ID :: $CHANGE_ID"
                  echo "CHANGE_URL :: $CHANGE_URL"

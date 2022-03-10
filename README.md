@@ -17,4 +17,7 @@ curl localhost:8080
 
 ```
 
+# Toget all the pre-define variables in Jenkins
+http://localhost:8080/env-vars.html/
+
 

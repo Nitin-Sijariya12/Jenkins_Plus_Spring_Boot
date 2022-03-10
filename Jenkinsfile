@@ -19,19 +19,13 @@ pipeline {
                 script { 
                     properties([
                         parameters([
-                            choice(choices: ['ONE', 'TWO'], name: 'PARAMETER_01'),
-                            booleanParam( defaultValue: true, description: '', name: 'BOOLEAN'),
-                            string(defaultValue: 'scriptcrunch', name: 'STRING-PARAMETER', trim: true)
+                            choice(choices: ['DEV', 'QA', 'UAT'], name: 'Enviroment name', description: 'Please select the enviroment name on which you want to deploy'),
+                            booleanParam(name: 'Test cases', description: 'Do you want to run the test cases ?')
                         ])
                     ])
                 }
             }
-        }
-        
-        
-        
-  
-        
+        } 
         stage("init") {
             steps {
                 echo 'In side init !!'

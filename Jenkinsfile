@@ -73,16 +73,10 @@ pipeline {
                  sh 'mvn clean' 
             }
         }
-        stage("test") {
-            steps {
-                 echo 'In side test !!'
-                 sh 'mvn test' 
-            }
-        }
-        stage("build") {
+        stage(" test and build") {
             steps {
                 echo 'In side build !!'
-                sh 'mvn install' 
+                sh 'mvn test install' 
             }
         }
         stage("deploy") {

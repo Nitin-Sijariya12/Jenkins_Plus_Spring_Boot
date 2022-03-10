@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                echo 'In side init'
+                echo 'In side init !!'
             }
         }
         stage("build") {

@@ -1,15 +1,17 @@
 pipeline {
     agent any
     
-    enviroment{
-        Name = 'Nitin'   
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
     }
     
     stages {
         stage("init") {
             steps {
                 echo 'In side init !!'
-                echo "Name = ${Name}"
+                echo "Database engine is ${DB_ENGINE}"
+                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
             }
         }
         stage("build") {

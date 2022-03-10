@@ -7,7 +7,8 @@ pipeline {
     }
     
     tools {         
-        maven 'maven_home'  
+        maven 'maven_home'
+        jdk 'java11'
        
     }
     
@@ -18,6 +19,7 @@ pipeline {
                 echo "Name =  ${NAME}"
                 echo "City =  ${CITY}"
                 echo "M2_HOME = ${M2_HOME}"
+                echo "PATH = ${PATH}"
             }
         }
         stage("build") {

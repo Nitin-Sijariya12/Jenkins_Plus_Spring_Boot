@@ -11,13 +11,9 @@ pipeline {
         jdk 'java11'     
     }
     
-    properties([
-        options([
-            string(name: 'branchName', description: 'Please specify the branch name'),
-            choice(choices: ['DEV', 'QA', 'UAT'], name: 'Enviroment name', description: 'Please select the enviroment name on which you want to deploy'),
-            booleanParam(name: 'Test cases', description: 'Do you want to run the test cases ?')
-        ])
-    ]);
+    parameters {
+    string(name: 'branchName', description: 'Please specify the branch na
+  }
 
     stages {    
         stage("init") {

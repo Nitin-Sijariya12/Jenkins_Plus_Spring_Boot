@@ -12,8 +12,8 @@ pipeline {
     }
     
     parameters {
-    string(name: 'branchName', description: 'Please specify the branch na
-  }
+            string(name: 'branchName', description: 'Please specify the branch name')
+      }
 
     stages {    
         stage("init") {

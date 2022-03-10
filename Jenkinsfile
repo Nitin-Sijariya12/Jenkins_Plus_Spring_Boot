@@ -25,6 +25,7 @@ pipeline {
         stage("build") {
             steps {
                  echo 'In side build !!'
+                 sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
             }
         }
         stage("test") {

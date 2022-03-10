@@ -7,8 +7,8 @@ pipeline {
     }
     
     tools {         
-        maven 'Maven 3.3.9'  
-        jdk 'JAVA_HOME'      
+        maven 'maven_home'  
+       
     }
     
     stages {
@@ -17,7 +17,6 @@ pipeline {
                 echo 'In side init !!'
                 echo "Name =  ${NAME}"
                 echo "City =  ${CITY}"
-                echo "PATH = ${PATH}"
                 echo "M2_HOME = ${M2_HOME}"
             }
         }

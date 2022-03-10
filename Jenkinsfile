@@ -13,6 +13,25 @@ pipeline {
     }
     
     stages {
+
+        stage('Setup parameters') {
+            steps {
+                script { 
+                    properties([
+                        parameters([
+                            choice(choices: ['ONE', 'TWO'], name: 'PARAMETER_01'),
+                            booleanParam( defaultValue: true, description: '', name: 'BOOLEAN'),
+                            string(defaultValue: 'scriptcrunch', name: 'STRING-PARAMETER', trim: true)
+                        ])
+                    ])
+                }
+            }
+        }
+        
+        
+        
+  
+        
         stage("init") {
             steps {
                 echo 'In side init !!'

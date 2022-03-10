@@ -8,24 +8,20 @@ pipeline {
     
     tools {         
         maven 'maven_home'
-        jdk 'java11'
-       
+        jdk 'java11'     
     }
     
-    stages {
 
-        stage('Setup parameters') {
-            steps {
-                script { 
-                    properties([
-                        parameters([
-                            choice(choices: ['DEV', 'QA', 'UAT'], name: 'Enviroment name', description: 'Please select the enviroment name on which you want to deploy'),
-                            booleanParam(name: 'Test cases', description: 'Do you want to run the test cases ?')
-                        ])
-                    ])
-                }
-            }
-        } 
+           
+    properties([
+        parameters([
+            choice(choices: ['DEV', 'QA', 'UAT'], name: 'Enviroment name', description: 'Please select the enviroment name on which you want to deploy'),
+            booleanParam(name: 'Test cases', description: 'Do you want to run the test cases ?')
+        ])
+    ]);
+              
+    
+    stages {    
         stage("init") {
             steps {
                 echo 'In side init !!'

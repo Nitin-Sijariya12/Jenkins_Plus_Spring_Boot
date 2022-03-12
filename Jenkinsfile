@@ -37,7 +37,7 @@ pipeline {
         }
         stage("deploy") {
             steps {
-                 echo 'In side deploy !! test branch'
+                 echo 'In side deploy !! test branch !!'
             }
         }
     }   

@@ -12,12 +12,13 @@ pipeline {
     }
     
     parameters {
-            string(name: 'branchName', description: 'Please specify the branch name')
+            string(name: 'branchName', description: 'Please specify the branch name', defaultValue: 'Lokesh_And_Nitin')
       }
 
     stages {    
         stage("init") {
             steps {  
+                sh 'java -version'
                 echo "Name =  ${NAME}"
                 echo "City =  ${CITY}"
                 echo "M2_HOME = ${M2_HOME}"
